@@ -1,0 +1,260 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box; /* Esto hace que el padding y el border no afecten al ancho y alto del elemento */
+    font-family: 'Inconsolata', monospace;
+    list-style: none; /* Esto quita los puntos de las listas */
+    text-decoration: none; /* Esto quita la decoración de los enlaces */
+}
+
+header {
+    position: fixed; /* Esto hace que el header se quede fijo en la parte superior */
+    right: 0;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    display: flex; /* Esto hace que los elementos del header se pongan en línea */
+    align-items: center; /* Esto hace que los elementos del header se alineen verticalmente */
+    justify-content: space-between; /* Esto hace que los elementos del header se distribuyan de manera uniforme */
+    padding: 15px 3%;
+    background-color: transparent; /* Esto hace que el fondo del header sea transparente */
+}
+
+.logo {
+    font-size: 30px;
+    font-weight: 700;
+    color: white;
+}
+
+.navlist {
+    display: flex; /* Esto hace que los elementos de la lista se pongan en línea */
+}
+
+.navlist a {
+    color: white;
+    margin-left: 60px;
+    font-size: 15px;
+    font-weight: 600;
+    border-bottom: 2px solid transparent;
+    transition: all 0.5s ease 0s;
+}
+
+
+.navlist a:hover {
+    border-bottom: 2px solid white;
+}
+
+#menu-icon {
+    color: white;
+    font-size: 35px;
+    z-index: 1001;
+    cursor: pointer; /* Esto hace que el cursor se convierta en una manita */
+    display: none; /* Esto hace que el icono del menú no se muestre */
+}
+
+.hero { 
+    height: 100%;
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(245.59deg, #31494e 0%, #385e70 25%, #131313 75%);
+    position: relative; /* Esto hace que el elemento sea relativo a su contenedor */
+    display: grid; /* Esto hace que los elementos del hero se pongan en línea */
+    grid-template-columns: 1fr 1fr; /* Esto hace que los elementos del hero se distribuyan en dos columnas */
+    align-items: center; /* Esto hace que los elementos del hero se alineen verticalmente */
+    gap: 2rem; /* Esto hace que los elementos del hero tengan un espacio entre ellos */
+}
+
+section {
+    padding: 0 8%;
+}
+
+.hero-text h5 {
+    color: white;
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 25px;
+}
+
+.hero-text h1 {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 50px;
+    line-height: 1;
+    color: white;
+    margin: 0 0 30px;
+}
+
+
+.hero-text h4 {
+    font-size: 18px;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.hero-text p {
+    font-size: 80%;
+    color: white;
+    margin-bottom: 40px;
+    line-height: 1.9;
+}
+
+
+.hero-img img {
+    width: 290px;
+    margin: 100px 0 0 100px;
+    height: auto;
+}
+
+.hero-text a {
+    display: inline-block; /* Esto hace que el elemento sea en línea y se pueda dar un ancho y alto */
+    color: white;
+    background-color: #4d4d4d;
+    border: 1px solid transparent; /* Esto hace que el borde del elemento sea transparente */
+    padding: 15px 30px;
+    line-height: 1.4;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 30px;
+    text-transform: uppercase; /* Esto hace que el texto se convierta en mayúsculas */
+    transition: all 0.5s ease 0s;
+}
+
+.hero-text a:hover {
+    background-color: transparent; /* Esto hace que el fondo del elemento sea transparente */
+    border: 1px solid white;
+    transform: translateX(8px); /* Esto hace que el elemento se mueva 8px a la derecha */
+}
+
+.hero-text a.videos {
+    background-color: transparent; /* Esto hace que el fondo del elemento sea transparente */
+    border: 1px solid white;
+    margin-left: 20px;
+}
+
+.hero-text a.videos i {
+    vertical-align: middle; /* Esto hace que el icono se alinee verticalmente */
+    margin-right: 5px;
+}
+
+.icons {
+    position: absolute; 
+    top: 50vh;
+    padding: 0 3%;
+    transform: translateY(-50%); /* Esto hace que el elemento se mueva 50% hacia arriba */
+}
+
+.icons i {
+    display: block;
+    margin: 26px 0;
+    font-size: 24px;
+    color: white;
+    transition: all 0.5s ease;
+}
+
+.icons i:hover {
+    color: #4d4d4d;
+    transform: translateY(-5px); /* Esto hace que el elemento se mueva 5px hacia arriba */
+}
+
+.scroll-down {
+    position: absolute;
+    bottom: 6%;
+    right: 3%;
+
+}
+
+.scroll-down i {
+    display: block;
+    padding: 12px;
+    font-size: 25px;
+    color: white;
+    background-color: #21383d;
+    animation: scroll 2s ease infinite; /* Esto hace que la animación se repita infinitamente */
+    border-radius: 30px;
+    transition: all 0.5s ease;
+}
+
+.scroll-down i:hover {
+    transform: translateY(-5px); /* Esto hace que el elemento se mueva 5px hacia arriba */
+}
+
+@media (max-width: 992px) {
+    section {
+        padding: 0 3%;
+        transition: .2s;
+    }
+
+    .hero-text {
+        padding-top: 0;
+    }
+
+    .hero-img {
+        text-align: center;
+    }
+
+    .hero-img img {
+        width: 60%;
+        margin: 50px 0 0 50px;
+    }
+
+    .hero-text p {
+        font-size: 70%;
+        color: white;
+    }
+
+    .icons {
+        display: none;
+    }
+
+    .scroll-down {
+        display: none;
+    }
+
+}
+
+@media (max-width: 768px) {
+    #menu-icon {
+        display: block;
+    }
+
+    .hero-text {
+        text-align: center;
+        padding-top: 100px;
+    }
+
+    .hero-img img {
+        margin: 0;
+    }
+
+    .hero {
+        height: 100%;
+        gap: 1rem; /* Esto hace que los elementos del hero tengan un espacio entre ellos */
+        grid-template-columns: 1fr; /* Esto hace que los elementos del hero se distribuyan en una columna */
+    }
+
+    .navlist {
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        width: 200px;
+        height: 32vh;
+        background: #052124ad;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        padding: 50px 20px;
+        transition: all 0.5s ease;
+    }
+
+    .navlist a {
+        margin-left: 0;
+        display: block;
+        margin: 7px 0;
+    }
+
+    .navlist.open {
+        right: 0;
+
+    }
+}
+
