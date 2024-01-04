@@ -11,7 +11,7 @@ header {
     position: fixed; /* Esto hace que el header se quede fijo en la parte superior */
     right: 0;
     top: 0;
-    z-index: 1000;
+    z-index: 1000; /* Esto hace que el header se muestre por encima de los demás elementos */
     width: 100%;
     display: flex; /* Esto hace que los elementos del header se pongan en línea */
     align-items: center; /* Esto hace que los elementos del header se alineen verticalmente */
@@ -44,12 +44,19 @@ header {
     border-bottom: 2px solid white;
 }
 
+#menu-toggle{
+    display: none; /* Esto hace que el checkbox no se muestre */
+} 
+
+.menu-icon-action{
+    display: none;
+}
+
 #menu-icon {
     color: white;
     font-size: 35px;
-    z-index: 1001;
+    z-index: 1001; /* Esto hace que el icono del menú se muestre por encima de los demás elementos */
     cursor: pointer; /* Esto hace que el cursor se convierta en una manita */
-    display: none; /* Esto hace que el icono del menú no se muestre */
 }
 
 .hero { 
@@ -103,6 +110,12 @@ section {
     width: 400px;
     margin: 10% 0 0 10%;
     height: auto;
+    transition: all 5s linear; /* Esto hace que la transición sea lineal y lenta*/
+}
+
+.hero-img img:hover {
+    width: 450px;
+    opacity: 0.6;
 }
 
 .hero-text a {
@@ -169,7 +182,6 @@ section {
     font-size: 25px;
     color: white;
     background-color: #21383d;
-    animation: scroll 2s ease infinite; /* Esto hace que la animación se repita infinitamente */
     border-radius: 30px;
     transition: all 0.5s ease;
 }
@@ -213,7 +225,8 @@ section {
 }
 
 @media (max-width: 768px) {
-    #menu-icon {
+
+    .menu-icon-action{
         display: block;
     }
 
@@ -232,21 +245,21 @@ section {
         grid-template-columns: 1fr; /* Esto hace que los elementos del hero se distribuyan en una columna */
     }
 
-    .navlist {
+    .navlist { 
         position: absolute;
         top: 100%;
         right: -100%;
         width: 200px;
-        height: 32vh;
+        height: 180px;
         background: #052124f7;
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        padding: 50px 20px;
+        display: flex; /* Esto hace que los elementos de la lista se pongan en línea */
+        align-items: center; /* Esto hace que los elementos de la lista se alineen verticalmente */
+        flex-direction: column; /* Esto hace que los elementos de la lista se pongan en columna */
+        padding: 30px 20px;
         transition: all 0.5s ease;
     }
 
-    .navlist a {
+    .navlist a { 
         margin-left: 0;
         display: block;
         margin: 7px 0;
@@ -254,7 +267,15 @@ section {
 
     .navlist.open {
         right: 0;
-
     }
+
+    #menu-icon { /* Esto hace que el icono del menú se muestre */
+        display: block;
+    }
+
+    #menu-toggle:checked + label.menu-icon-action + ul { /* Esto hace que cuando el checkbox esté seleccionado, el menú se muestre */
+        right: 0;
+    }
+    
 }
 
