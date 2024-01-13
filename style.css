@@ -20,6 +20,10 @@ header {
     background-color: transparent; /* Esto hace que el fondo del header sea transparente */
 }
 
+body{
+    overflow: hidden;
+}
+
 .logo {
     font-size: 30px;
     font-weight: 700;
